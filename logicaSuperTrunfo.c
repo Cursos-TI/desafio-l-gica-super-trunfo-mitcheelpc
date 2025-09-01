@@ -1,6 +1,4 @@
 #include <stdio.h>
-
-#include <stdio.h>
 #include <string.h>
 
 // Função para limpar ENTER que sobra no buffer
@@ -10,6 +8,7 @@ void limparBuffer() {
 }
 
 int main() {
+     int opcao;
     // Valor das variáveis da carta 1
     char estado1;
     char codigo_da_carta1[10];
@@ -122,15 +121,103 @@ int main() {
 
 
     printf("\n--- Comparação das cartas ---\n");
+    printf(" Escolha um atributo para comparaçao\n");
+    printf("1. Populaçao \n");
+    printf("2 Area \n");
+    printf("3. PIB \n");
+    printf("4. Numeros de pontos turisticos \n");
+    printf("5. Densidade populacional \n");
+    scanf("%d" , &opcao);
 
-// População
+    switch (opcao)
+    {
+    case 1:
+    printf("Nome da cidade da carta 1: %s - Nome da cidade da carta 2: %s\n", 
+           nome_da_cidade1, nome_da_cidade2);
 
-    printf("Carta 1 - %s : %lu\n",nome_da_cidade1,populacao1);
-    printf("Carta 2 - %s : %lu\n",nome_da_cidade2,populacao2);
-if (populacao1 > populacao2)
-    printf("Carta 1 %s venceu \n",nome_da_cidade1);
-else if (populacao2 > populacao1)
-    printf("Carta 2 %s venceu\n",nome_da_cidade2);
+    printf("Comparação do Atributo População\n");
+    printf("População da carta 1: %lu - População da carta 2: %lu\n", 
+           populacao1, populacao2);
+
+    if (populacao1 > populacao2) {
+        printf("Carta 1 venceu\n");
+    } else if (populacao1 < populacao2) {
+        printf("Carta 2 venceu\n");
+    } else {  
+        printf("EMPATE\n");
+    }
+    break;
+
+    case 2:
+    printf("Nome da cidade da carta 1: %s - Nome da cidade da carta 2: %s\n", 
+           nome_da_cidade1, nome_da_cidade2);
+
+    printf("Comparação do Atributo Area\n");
+    printf("Area da carta 1: %2.f - Area da carta 2: %2.f\n", 
+           area1, area2);
+
+    if (area1 > area2) {
+        printf("Carta 1 venceu\n");
+    } else if (area1 < area2) {
+        printf("Carta 2 venceu\n");
+    } else {  
+        printf("EMPATE\n");
+    }
+    break;
+
+    case 3:
+    printf("Nome da cidade da carta 1: %s - Nome da cidade da carta 2: %s\n", 
+           nome_da_cidade1, nome_da_cidade2);
+
+    printf("Comparação do Atributo PIB\n");
+    printf("PIB da carta 1: %2.f - PIB da carta 2: %2.f\n", 
+           pib1, pib2);
+
+    if (pib1 > pib2) {
+        printf("Carta 1 venceu\n");
+    } else if (pib1 < pib2) {
+        printf("Carta 2 venceu\n");
+    } else {  
+        printf("EMPATE\n");
+    }
+    break;
+
+    case 4:
+    printf("Nome da cidade da carta 1: %s - Nome da cidade da carta 2: %s\n", 
+           nome_da_cidade1, nome_da_cidade2);
+
+    printf("Comparação do Atributo Pontos turisticos\n");
+    printf("Pontos turisticos da carta 1: %d - Pontos Turisticos da carta 2: %d\n", 
+           pontos_turisticos1, pontos_turisticos2);
+
+    if (pontos_turisticos1 > pontos_turisticos2) {
+        printf("Carta 1 venceu\n");
+    } else if (pontos_turisticos1 < pontos_turisticos2) {
+        printf("Carta 2 venceu\n");
+    } else {  
+        printf("EMPATE\n");
+    }
+    break;
+
+    case 5:
+    printf("Nome da cidade da carta 1: %s - Nome da cidade da carta 2: %s\n", 
+           nome_da_cidade1, nome_da_cidade2);
+
+    printf("Comparação do Atributo Densidade Populacional\n");
+    printf("Densidade Populacional da carta 1: %2.f - Densidade Populacional da carta 2: %2.f\n", 
+           densidade_populacional1, densidade_populacional2);
+
+    if (densidade_populacional1 < densidade_populacional2) {
+        printf("Carta 1 venceu\n");
+    } else if (densidade_populacional1 > densidade_populacional2) {
+        printf("Carta 2 venceu\n");
+    } else {  
+        printf("EMPATE\n");
+    }
+    break;
+    
+    }
+
 
 
     return 0;
